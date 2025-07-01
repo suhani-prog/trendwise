@@ -1,18 +1,8 @@
-import Link from "next/link";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
-
-export default async function Home() {
-  const session = await getServerSession(authOptions);
+export default function Home() {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold">TrendWise</h1>
-      {session ? (
-        <p>Welcome, {session.user?.name}!</p>
-      ) : (
-        <Link href="/api/auth/signin" className="text-blue-500">Login with Google</Link>
-      )}
-      <p>This is a test homepage.</p>
+    <div>
+      <h1>TrendWise</h1>
+      <p>This is a test page.</p>
     </div>
   );
 }
